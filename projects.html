@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+
+    <!-- Necessary Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Necessary JQuery files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  <body class="bg-dark text-light">
+    <div class="container">
+      <div id="navbar"></div>
+
+      <div class="mt-4">
+        <h1>Colin's Projects</h1>
+        <p>This webpage is currently under construction. Please come back later.</p>
+
+        <hr>
+
+        <h2>What I do</h2>
+        <p>
+          I am a hobbyist who enjoys participating in various projects and activities. My first hobby that I got into was was building computers. Since then, I have grown myself into other hobbies, such as:
+
+          <ul>
+            <li>3D printing</li>
+            <li>Cars</li>
+            <li>Mountain biking</li>
+            <li>Programming (unless you count Python as a scripting language)</li>
+            <li>Web design (strictly with HTML, CSS, and JS)</li>
+            <li>Photography</li>
+          </ul>
+        </p>
+
+        <p>
+          And if you're wondering how I can afford all of it, I question the same thing.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        $('#navbar').load("/extra-html/navbar.html");
+      });
+    </script>
+
+    <!-- Necessary Bootstrap 5.3 JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
