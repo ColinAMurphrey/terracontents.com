@@ -1,0 +1,234 @@
+<head>
+  <style>
+    :root { --sidebar-w: 220px; --brand: #0d6efd; --sidebar-bg: #0b1220; --text: #e9eef8; }
+
+    /* Base sidebar (desktop) */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: var(--sidebar-w);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--sidebar-bg);
+      color: var(--text);
+      padding: 1.25rem;
+      box-shadow: 2px 0 8px rgba(2,6,23,0.6);
+      overflow-y: auto;
+      z-index: 1040;
+      transform: translateX(0);
+      transition: transform .28s ease;
+    }
+
+    /* Toggle button (pancake / hamburger) */
+    .sidebar-toggle {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 1060;
+      width: 44px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(11,18,32,0.85);
+      border-radius: 8px;
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.04);
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(2,6,23,0.4);
+    }
+    .sidebar-toggle:focus { outline: 2px solid rgba(13,110,253,0.22); outline-offset: 2px; }
+
+    .sidebar-toggle .pancake {
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      box-shadow:
+        0 6px 0 0 currentColor,
+        0 -6px 0 0 currentColor;
+      border-radius: 2px;
+    }
+
+    /* Off-canvas for small screens */
+    .sidebar--offcanvas {
+      transform: translateX(-110%);
+    }
+    /* When open on mobile */
+    .sidebar-open .sidebar {
+      transform: translateX(0);
+    }
+
+    /* Overlay when the sidebar is open on small screens */
+    .sidebar-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 1035;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s ease;
+    }
+    .sidebar-open .sidebar-overlay {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .sidebar .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: inherit;
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.06);
+    }
+
+    .sidebar .nav {
+      margin-top: 0.5rem;
+      gap: 0.25rem;
+    }
+
+    .sidebar .nav-link {
+      color: rgba(233,238,248,0.85);
+      padding: 0.5rem 0.6rem;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      transition: background .15s, color .15s;
+    }
+
+    .sidebar .nav-link:hover {
+      background: rgba(255,255,255,0.03);
+      color: #fff;
+    }
+
+    .sidebar .nav-link.active {
+      background: linear-gradient(90deg, rgba(13,110,253,0.12), rgba(13,110,253,0.06));
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    .sidebar .nav-link .icon {
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      opacity: 0.9;
+    }
+
+    .sidebar .footer {
+      margin-top: auto;
+      font-size: 0.9rem;
+      color: rgba(233,238,248,0.65);
+    }
+
+    /* Make main content avoid overlap on desktop */
+    .content-offset { margin-left: var(--sidebar-w); transition: margin .2s ease; }
+
+    /* Responsive behavior */
+    @media (max-width: 991.98px) {
+      /* hide desktop sidebar by default on mobile */
+      .sidebar { transform: translateX(-110%); }
+      .sidebar--offcanvas { transform: translateX(-110%); }
+      .sidebar-toggle { display: inline-grid; }
+      .content-offset { margin-left: 0; } /* content should be full width */
+    }
+    @media (min-width: 992px) {
+      /* on desktop hide the toggle and overlay */
+      .sidebar-toggle, .sidebar-overlay { display: none; }
+    }
+  </style>
+</head>
+
+<body class="p-4">
+  <!-- Vertical sidebar fragment (drop-in). -->
+  <button id="sidebarToggle" class="sidebar-toggle" aria-controls="sidebar" aria-expanded="false" aria-label="Open sidebar">
+    <span class="pancake" aria-hidden="true"></span>
+  </button>
+
+  <nav id="sidebar" class="sidebar" role="navigation" aria-label="Primary">
+
+    <ul class="nav flex-column">
+      <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="/projects.html">Projects</a></li>
+    </ul>
+  </nav>
+
+  <div id="sidebarOverlay" class="sidebar-overlay" tabindex="-1" aria-hidden="true"></div>
+
+  <script>
+    (function () {
+      const toggle = document.getElementById('sidebarToggle');
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      const root = document.documentElement;
+      const ANCHOR_SELECTOR = '.sidebar .nav-link';
+
+      function openSidebar() {
+        root.classList.add('sidebar-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        overlay.setAttribute('aria-hidden', 'false');
+      }
+      function closeSidebar() {
+        root.classList.remove('sidebar-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        overlay.setAttribute('aria-hidden', 'true');
+      }
+      function toggleSidebar() {
+        if (root.classList.contains('sidebar-open')) closeSidebar(); else openSidebar();
+      }
+
+      // Toggle button
+      toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleSidebar();
+      });
+
+      // Close when clicking overlay or a nav link (mobile)
+      overlay.addEventListener('click', closeSidebar);
+      document.addEventListener('click', function (e) {
+        if (!sidebar.contains(e.target) && !toggle.contains(e.target) && root.classList.contains('sidebar-open')) {
+          closeSidebar();
+        }
+      });
+      // Close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeSidebar();
+      });
+
+      // Mark the current page's link active (works for simple filenames)
+      try {
+        const path = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll(ANCHOR_SELECTOR).forEach(a => {
+          const href = a.getAttribute('href')?.split('/').pop();
+          if (href === path) a.classList.add('active'); else a.classList.remove('active');
+          // close sidebar when a nav link is clicked (mobile)
+          a.addEventListener('click', () => {
+            if (window.innerWidth < 992) closeSidebar();
+          });
+        });
+        const yearEl = document.getElementById('sidebar-year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+      } catch (e) { /* noop */ }
+
+      // Optional: hide the toggle on larger viewports if JS runs before CSS media queries
+      function handleResize() {
+        if (window.innerWidth >= 992) {
+          root.classList.remove('sidebar-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      }
+      window.addEventListener('resize', handleResize, { passive: true });
+    })();
+  </script>
+</body>

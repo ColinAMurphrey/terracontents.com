@@ -1,0 +1,11 @@
+/* .anti-sidebar {
+  margin-left: 250px;
+} */
+
+
+
+@media (min-width: 992px) {
+  .anti-sidebar {
+    margin-left: 250px;
+  }
+}
