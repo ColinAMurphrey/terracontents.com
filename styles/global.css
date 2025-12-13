@@ -9,3 +9,8 @@
     margin-left: 250px;
   }
 }
+
+.muted-text-light {
+  font-size: 80%;
+  color: rgba(255, 255, 255, 0.7);
+}

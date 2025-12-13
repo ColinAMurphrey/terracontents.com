@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Necessary Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Necessary JQuery files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+    <div class="card bg-secondary text-light">
+      <img src="/adventures/2025/december/austin-trip/assets/icey-poking-at-water.jpeg" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Austin Trip</h5>
+        <p class="muted-text-light">December, 2025</p>
+        <p class="card-text">A one-day trip to Austin with my friend, Icey.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#austinTrip2025">
+          View Log
+        </button>
+      </div>
+    </div>
+
+    <!-- The Full Screen Modal -->
+    <div class="modal fade" id="austinTrip2025" tabindex="-1" aria-labelledby="fullScreenModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">  <!-- Add the .modal-fullscreen class here -->
+        <div class="modal-content bg-dark text-light">
+          <div class="modal-header mt-5">
+            <h5 class="modal-title" id="fullScreenModalLabel">Austin Trip</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <!-- Your card content can go here, or any other content -->
+            <p>
+              In December of 2025, I decided to go on a photography trip to Austin with my friend Icey. Actually, her real name is Melody. But her past friends called her Icey. On this trip, we explored a trail in Austin near the Barton Creek Greenbelt area.
+            </p>
+
+            <p>
+              While I've been on this trail before, Icey hasn't been on this trail. Despite my limited photography knowledge, I attempted to take some pictures of a nearby waterfall. I wanted to get a quick long exposure shot of flowering water (actually, this is one of the main reasons for us coming to Austin). To any personal friends reading this who are asking, "Why not just find a waterfall in Houston?" Icey and I wanted to go on a road trip to Austin. I had mentioned the idea of going on a quick, one-day road trip to Austin. She agreed, and we set out early in the morning to Austin.
+            </p>
+
+            <p>
+              Enough yapping. Here are some of the photos I took on this trip!
+            </p>
+
+            <div class="row">
+              <div class="col">
+                <img src="/adventures/2025/december/austin-trip/assets/DSC00217.jpg" class="img-fluid grid-img mb-3" alt="Waterfall long exposure photo taken in Austin, Texas.">
+              </div>
+              
+              <div class="col">
+                <img src="/adventures/2025/december/austin-trip/assets/DSC00227.jpg" class="img-fluid grid-img mb-3" alt="Waterfall long exposure photo taken in Austin, Texas.">
+              </div>
+              
+              <div class="col">
+                <img src="/adventures/2025/december/austin-trip/assets/DSC00232.jpg" class="img-fluid grid-img mb-3" alt="Waterfall long exposure photo taken in Austin, Texas.">
+              </div>
+            </div>
+
+            <p>
+              If you are wondering how I was able to achieve these long exposure shots, I set the aperture to f/22, the shutter speed to roughly one second, and the ISO set to 100 (change your aperture to a setting that properly exposes the image, based on your ISO and your environment).
+            </p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Temporary script to show modal upon refresh. Comment this script off later -->
+    <!-- <script>
+      $(document).ready(function(){
+        $('#austinTrip2025').modal('show');
+      });
+    </script> -->
+
+    <!-- Necessary Bootstrap 5.3 JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
