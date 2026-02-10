@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ARCHIVE MEMO — INTERNAL USE ONLY</title>
+
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --panel:#0f1116;
+      --panel2:#0c0d11;
+      --text:#e6e6eb;
+      --muted:#9aa0ab;
+      --faint:#6b7280;
+      --accent:#7aa2f7;
+      --border:#1c1f26;
+      --warn:#e6c87a;
+      --bad:#ff6b6b;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      padding:2rem;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      line-height:1.55;
+    }
+
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      box-shadow: inset 0 0 0 1px #000;
+    }
+
+    header{
+      padding:1.25rem 1.5rem 1rem;
+      border-bottom:1px dashed var(--border);
+    }
+
+    .stamp{
+      display:inline-block;
+      padding:.25rem .5rem;
+      border:1px solid var(--border);
+      color:var(--warn);
+      letter-spacing:.08em;
+      font-size:.82rem;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:.9rem 0 .25rem;
+      font-size:1.2rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:.9rem;
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap:.25rem .75rem;
+      margin-top:.75rem;
+    }
+
+    .meta .k{ color:var(--faint); }
+    .meta .v{ color:var(--text); }
+
+    main{
+      padding:1.5rem;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:1.25rem;
+    }
+
+    @media (max-width: 900px){
+      main{ grid-template-columns:1fr; }
+    }
+
+    section{
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.18);
+      padding:1.1rem 1.1rem 1rem;
+    }
+
+    section h2{
+      margin:0 0 .75rem;
+      font-size:.95rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    p{ margin:.7rem 0; }
+
+    .redact{
+      background:#000;
+      color:#000;
+      padding:0 .25rem;
+      border-radius:2px;
+      box-shadow: inset 0 0 0 1px #111;
+    }
+
+    .pull{
+      margin:1rem 0;
+      padding:.9rem 1rem;
+      border-left:3px solid var(--warn);
+      background:rgba(230,200,122,.08);
+      color:var(--text);
+    }
+
+    .fragment{
+      padding:.9rem 1rem;
+      border:1px dashed var(--border);
+      color:var(--muted);
+      background:rgba(0,0,0,.20);
+      margin:.9rem 0 0;
+      white-space:pre-wrap;
+    }
+
+    ul{
+      margin:.6rem 0 0 1.25rem;
+      color:var(--text);
+    }
+
+    li{ margin:.35rem 0; }
+
+    .warning{
+      border-color: rgba(255,107,107,.35);
+      background: rgba(255,107,107,.06);
+    }
+
+    .warning h2{ color: var(--bad); }
+
+    footer{
+      padding:1rem 1.5rem;
+      border-top:1px dashed var(--border);
+      color:var(--muted);
+      font-size:.85rem;
+    }
+
+    .sig{
+      color:var(--faint);
+      margin-top:.75rem;
+      white-space:pre-wrap;
+    }
+
+    /* subtle “old display” vibe */
+    .wrap, section{
+      position:relative;
+    }
+    .wrap:before{
+      content:"";
+      pointer-events:none;
+      position:absolute;
+      inset:0;
+      background: repeating-linear-gradient(
+        180deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        rgba(0,0,0,0) 3px,
+        rgba(0,0,0,0) 6px
+      );
+      mix-blend-mode: overlay;
+      opacity:.15;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <span class="stamp">iNTERNAL ARCHIVE - DO NOT COPY</span>
+      <h1>Entity Brief: K-19 "The Keel"</h1>
+
+      <div class="meta">
+        <div class="k">DATE:</div>
+        <div class="v">2006-09-03</div>
+        
+        <div class="k">REFERENCE:</div>
+        <div class="v">BASIN WING / ROOM <span class="redact">█</span></div>
+
+        <div class="k">AUTHOR:</div>
+        <div class="v">Intake Desk (Night)</div>
+
+        <div class="k">DISTRIBUTION:</div>
+        <div class="v">Security Shift B, Facilities, Water Systems</div>
+
+        <div class="k">STATUS:</div>
+        <div class="v">CONTAINMENT STABLE (DO NOT FEED)</div>
+      </div>
+    </header>
+
+    <main>
+      <!-- LEFT -->
+      <section>
+        <h2>Summary</h2>
+        <p>
+          K-19 presents as a vertical "spine" of matte material, roughly human-height, emerging from standing water. Observers describe it as a ship's keel turned upright, but warmer than it should be.
+        </p>
+
+        <p>
+          K-19 does not chase. It "corrects." When a person enters its vicinity, their posture subtly changes: shoulders square, chin lifts, breathing slows. Those affected report calm certainty and a sudden desire to "walk straight."
+        </p>
+
+        <div class="pull">
+          <strong>Primary hazard:</strong>
+          K-19 gradually removes "unnecessary" movement from a subject.
+          This includes fidgeting, blinking, and (in later stages) swallowing.
+        </div>
+
+        <h2>Incident Narrative</h2>
+        <p>
+          On 2006-09-03, Room <span class="redact">███</span> flooded due to a valve failure. When Facilities arrived, the waterline was mirror-smooth despite visible inflow. Three tools placed on the surface did not sink.
+        </p>
+
+        <p>
+          A security camera recorded a staff member stepping in, pausing, and standing perfectly still for 11 minutes. When asked why, the staff member answered: "It fixed my balance. I didn't want to ruin it."
+        </p>
+
+        <div class="fragment">
+RECOVERED VOICE NOTE (PARTIAL)
+I can feel it aligning me.
+Like a level tool inside my bones.
+I think it's proud when I stay still.
+It's... helping. It's helping too much.
+        </div>
+
+        <h2>Handling Rules</h2>
+        <ul>
+          <li>Do not enter standing water within K-19's wing.</li>
+          <li>Do not "test" stillness. Do not hold your breath near it.</li>
+          <li>If you feel calm "for no reason," exit immediately and speak aloud one unnecessary sentence.</li>
+          <li>Chew gum during inspections. It disrupts the effect.</li>
+          <li>If you notice fewer blinks, contact Medical before you finish the report.</li>
+        </ul>
+
+        <p class="sig">
+- Intake Desk, Night
+If you see K-19 outside the water,
+it is not K-19.
+It is you being measured.
+        </p>
+      </section>
+
+      <section class="warning">
+        <h2>Unusual Observations</h2>
+        <ul>
+          <li>Water near K-19 becomes acoustically "quiet."</li>
+          <li>Subjects report hearing a faint ship-horn in their teeth.</li>
+          <li>Camera footage near the entity loses micro-jitter.</li>
+          <li>Nearby signage shifts to perfect alignment overnight.</li>
+        </ul>
+
+        <div class="fragment">
+FIELD NOTE - WATER SYSTEMS
+We drained the room twice.
+It came back with the water.
+Not carried. Not moved.
+Just... included.
+        </div>
+      </section>
+
+      <section>
+        <h2>Related Artifacts</h2>
+        <p class="muted">
+          Items found after prolonged exposure events.
+        </p>
+
+        <ul>
+          <li>A perfectly folded uniform with no crease irregularities.</li>
+          <li>Dental bite guard (unused) labeled "FOR STRAIGHT TEETH."</li>
+          <li>
+            A notebook page containing only parallel lines. 
+            Count varies each time.
+          </li>
+        </ul>
+
+        <div class="fragment">
+MARGIN SCRAWL (ON NOTEBOOK)
+stand still
+be correct
+stop wobbling
+stop being soft
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      END OF MEMO - CHECKSUM: ████-███-████<br />
+      If you hear tape being pulled in an empty aisle, leave a small mess and walk away slowly.
+    </footer>
+    
+  </div>
+</body>
+</html>

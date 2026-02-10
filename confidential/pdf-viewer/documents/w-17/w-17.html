@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ARCHIVE MEMO — INTERNAL USE ONLY</title>
+
+  <style>
+    :root{
+      --bg:#0b0c0f;
+      --panel:#0f1116;
+      --panel2:#0c0d11;
+      --text:#e6e6eb;
+      --muted:#9aa0ab;
+      --faint:#6b7280;
+      --accent:#7aa2f7;
+      --border:#1c1f26;
+      --warn:#e6c87a;
+      --bad:#ff6b6b;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      padding:2rem;
+      background:var(--bg);
+      color:var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      line-height:1.55;
+    }
+
+    .wrap{
+      max-width:980px;
+      margin:0 auto;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg,var(--panel),var(--panel2));
+      box-shadow: inset 0 0 0 1px #000;
+    }
+
+    header{
+      padding:1.25rem 1.5rem 1rem;
+      border-bottom:1px dashed var(--border);
+    }
+
+    .stamp{
+      display:inline-block;
+      padding:.25rem .5rem;
+      border:1px solid var(--border);
+      color:var(--warn);
+      letter-spacing:.08em;
+      font-size:.82rem;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:.9rem 0 .25rem;
+      font-size:1.2rem;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:.9rem;
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap:.25rem .75rem;
+      margin-top:.75rem;
+    }
+
+    .meta .k{ color:var(--faint); }
+    .meta .v{ color:var(--text); }
+
+    main{
+      padding:1.5rem;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:1.25rem;
+    }
+
+    @media (max-width: 900px){
+      main{ grid-template-columns:1fr; }
+    }
+
+    section{
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.18);
+      padding:1.1rem 1.1rem 1rem;
+    }
+
+    section h2{
+      margin:0 0 .75rem;
+      font-size:.95rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:var(--accent);
+      font-weight:700;
+    }
+
+    p{ margin:.7rem 0; }
+
+    .redact{
+      background:#000;
+      color:#000;
+      padding:0 .25rem;
+      border-radius:2px;
+      box-shadow: inset 0 0 0 1px #111;
+    }
+
+    .pull{
+      margin:1rem 0;
+      padding:.9rem 1rem;
+      border-left:3px solid var(--warn);
+      background:rgba(230,200,122,.08);
+      color:var(--text);
+    }
+
+    .fragment{
+      padding:.9rem 1rem;
+      border:1px dashed var(--border);
+      color:var(--muted);
+      background:rgba(0,0,0,.20);
+      margin:.9rem 0 0;
+      white-space:pre-wrap;
+    }
+
+    ul{
+      margin:.6rem 0 0 1.25rem;
+      color:var(--text);
+    }
+
+    li{ margin:.35rem 0; }
+
+    .warning{
+      border-color: rgba(255,107,107,.35);
+      background: rgba(255,107,107,.06);
+    }
+
+    .warning h2{ color: var(--bad); }
+
+    footer{
+      padding:1rem 1.5rem;
+      border-top:1px dashed var(--border);
+      color:var(--muted);
+      font-size:.85rem;
+    }
+
+    .sig{
+      color:var(--faint);
+      margin-top:.75rem;
+      white-space:pre-wrap;
+    }
+
+    /* subtle “old display” vibe */
+    .wrap, section{
+      position:relative;
+    }
+    .wrap:before{
+      content:"";
+      pointer-events:none;
+      position:absolute;
+      inset:0;
+      background: repeating-linear-gradient(
+        180deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.03) 1px,
+        rgba(0,0,0,0) 3px,
+        rgba(0,0,0,0) 6px
+      );
+      mix-blend-mode: overlay;
+      opacity:.15;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <span class="stamp">INTERNAL ARCHIVE - DO NOT COPY</span>
+      <h1>Memorandum: "The Mouth in the Wall"</h1>
+
+      <div class="meta">
+        <div class="k">DATE:</div><div class="v">2004-02-19</div>
+        <div class="k">REFERENCE:</div><div class="v">NODE 3 / SUBLEVEL <span class="redact">████</span></div>
+        <div class="k">AUTHOR:</div><div class="v">R. H. (Facilities Liaison)</div>
+        <div class="k">DISTRIBUTION:</div><div class="v">Maintenance Leads, Security Shift A, Audio Team</div>
+        <div class="k">STATUS:</div><div class="v">ACTIVE REVIEW - DO NOT INTERACT</div>
+      </div>
+    </header>
+
+    <main>
+      <!-- LEFT -->
+      <section>
+        <h2>Summary</h2>
+        <p>
+          At approximately 02:13, the west corridor plaster behind Panel W-17 began to <em>move</em>.
+          Not crack. Not bow. Move, as if the wall had learned to breathe.
+          The sound was first reported as a "wet whisper," then as "someone practicing our name."
+        </p>
+
+        <p>
+          The corridor was cleared. The corridor did not stay empty.
+          Two staff members claimed they heard footsteps that matched their own pace exactly one half-step behind, like a shadow trying to remember how to walk.
+        </p>
+
+        <div class="pull">
+          <strong>Note:</strong> The wall did not open. It only <em>made room</em>.
+          A mount-shape formed where no seam exists on any blueprint we possess.
+        </div>
+
+        <h2>Incident Narrative</h2>
+        <p>
+          Security footage shows W-17 at 02:12:58: normal. At 02:13:01: the camera's timestamp skips forward by nineteen seconds while the corridor lighting remains stable. The system claims no dropouts.
+        </p>
+
+        <p>
+          At 02:13:20, a maintenance cart rolls into view from off-camera. There is no operator.
+          It stops directly in front of W-17. The cart's top drawer opens on its own.
+          Tools inside shift as though something has gently stirred them with a finger.
+        </p>
+
+        <p>
+          At 02:13:44, Audio Team reports a voice on the corridor microphone:
+          <em>"We're being quiet so you don't have to be."</em>
+          Audio Team insists the phrase was not broadcast from any speaker in the building.
+        </p>
+
+        <div class="fragment" aria-label="Recovered transcription fragment">
+RECOVERED TRANSCRIPTION (PARTIAL) - MIC C3
+[unidentified] : you can stop pretending now
+[unidentified] : the building remembers you better than you do
+[unidentified] : please do not bring lights
+[unidentified] : it hurts when you make it see
+        </div>
+
+        <h2>Rules (Effective Immediately)</h2>
+        <ul>
+          <li>Do not address W-17 directly. Do not respond if it uses your name.</li>
+          <li>Do not approach with flashlights, headlamps, or phone screens uncovered.</li>
+          <li>Do not bring mirrors. Do not bring reflective tools.</li>
+          <li>If you hear your footsteps doubled, stop and count to ten without turning around.</li>
+          <li>If you smell bleach or pennies, leave the corridor. Do not run.</li>
+        </ul>
+
+        <p class="sig">
+- R. H.
+Facilities Liaison
+(If you receive a second copy of this memo that you did not request, destroy it without reading.
+It is not meant for you. It is practicing.)
+        </p>
+      </section>
+
+      <!-- RIGHT -->
+      <section class="warning">
+        <h2>Unusual Observations</h2>
+        <ul>
+          <li>Paint near W-17 dries in spirals, even when applied flat.</li>
+          <li>Dust patterns form concentric rings overnight, like something nested there.</li>
+          <li>Corridor temperature remains constant, but staff report "cold in the bones."</li>
+          <li>Meta fasteners corrode only on the side facing the panel.</li>
+        </ul>
+
+        <div class="fragment">
+FIELD NOTE - SHIFT A
+The mouth isn't always there.
+But the space for it is.
+Sometimes you can feel the room waiting.
+        </div>
+      </section>
+
+      <section>
+        <h2>Related Artifacts</h2>
+        <p class="muted">
+          Items recovered from the corridor after "quiet hours." All were dry. All were warm.
+        </p>
+
+        <ul>
+          <li>A badge lanyard labeled <span class="redact">████████</span> with teeth marks in the plastic clip.</li>
+          <li>A security key that opens no doors we have.</li>
+          <li>Three inches of hair braided around a bolt. (Hair matched no staff.)</li>
+          <li>A printed floor plan dated <span class="redact">19██</span> showing sublevels that do not exist.</li>
+        </ul>
+
+        <div class="fragment">
+MARGIN SCRAWL (ON FLOOR PLAN)
+it isn't underneath
+it is inside
+it is wearing the shape underneath
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      END OF MEMO - CHECKSUM: ████-███-████<br>
+      If you must pass W-17: keep your eyes unfocused, like you're looking through glass. It prefers that.
+    </footer>
+    
+  </div>
+</body>
+</html>
