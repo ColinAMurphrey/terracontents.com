@@ -14,3 +14,13 @@
   font-size: 80%;
   color: rgba(255, 255, 255, 0.7);
 }
+
+a {
+  color: #afafaf;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
