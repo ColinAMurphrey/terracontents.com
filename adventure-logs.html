@@ -28,6 +28,7 @@
 
           <div class="row">
             <div class="col-md-4 mb-4"><div id="header-austinTrip"></div></div>
+            <div class="col-md-4 mb-4"><div id="header-adventure-2"></div></div>
             <!-- <div class="col-md-4 mb-4"><div id="header-austinTrip-1"></div></div> -->  <!-- Change the element ID accordingly-->
           </div>
 
@@ -37,6 +38,12 @@
               .then(data => {
                 document.getElementById('header-austinTrip').innerHTML = data;
             });
+
+            // fetch('/adventures/2026/april/arkansas/adventure-2.html')
+            //   .then(response => response.text())
+            //   .then(data => {
+            //     document.getElementById('header-adventure-2').innerHTML = data;
+            // });
 
 
             // Template

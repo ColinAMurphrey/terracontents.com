@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Necessary Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Necessary JQuery files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+
+    <div class="card bg-secondary text-light" style="width: 18rem;">
+      <img src="/adventures/2026/april/arkansas/assets/anthony-chapel.jpeg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Arkansas</h5>
+        <p class="muted-text-light">April, 2026</p>
+        <p class="card-text">Weekend-long trip to visit a friend in Arkansas.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#fullScreenModal">
+          View Log
+        </button>
+      </div>
+    </div>
+
+    <!-- The Full Screen Modal -->
+    <div class="modal fade" id="fullScreenModal" tabindex="-1" aria-labelledby="fullScreenModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">  <!-- Add the .modal-fullscreen class here -->
+        <div class="modal-content bg-dark text-light">
+          <div class="container">
+            <div class="modal-header mt-5">
+              <h5 class="modal-title" id="fullScreenModalLabel">Arkansas</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <!-- Your card content can go here, or any other content -->
+
+              <h3>Friday</h3>
+              <p>
+                Friday morning. Early. Sleepy. Ready for a 7-hour drive to Arkansas. Well, first I have to pickup Icey. Pick her up, refuel, and head out. 
+              </p>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <!-- Necessary Bootstrap 5.3 JavaScript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
