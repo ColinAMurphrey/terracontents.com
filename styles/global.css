@@ -24,3 +24,8 @@ a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
+
+/* .modal-fullscreen {
+  min-height: 100% !important;
+  height: fit-content !important;
+} */
